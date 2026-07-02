@@ -1,0 +1,14 @@
+# 個人對話封存資料（請勿提交）
+Profiles/
+*.zip
+*.dat
+
+# 作業系統與編輯器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node（僅開發驗證時可能產生）
+node_modules/
+npm-debug.log*

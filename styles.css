@@ -1,0 +1,204 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e2e5ea;
+  --text: #1f2933;
+  --muted: #7b8794;
+  --accent: #6a34c4;
+  --accent-soft: #efe7fb;
+  --self: #6a34c4;
+  --self-text: #ffffff;
+  --peer: #eef0f3;
+  --peer-text: #1f2933;
+  --warn: #b45309;
+  --space: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-title h1 { font-size: 20px; margin: 0; }
+.subtitle { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover { filter: brightness(1.05); }
+
+.status-bar {
+  display: flex;
+  gap: 24px;
+  padding: 8px 24px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.status-bar .warn { color: var(--warn); }
+
+.progress {
+  padding: 8px 24px;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.filter-group {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.filter-group label { font-size: 12px; color: var(--muted); }
+.filter-group select,
+.filter-group input {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.conversation-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  overflow-y: auto;
+  flex: 1;
+}
+.conversation-list li {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.conversation-list li:hover { background: var(--bg); }
+.conversation-list li.active {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+.conv-name { font-size: 14px; font-weight: 600; }
+.conv-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.conversation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.conversation-header h2 { margin: 0; font-size: 17px; }
+.conv-meta { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+.date-picker { display: flex; flex-direction: column; gap: 4px; }
+.date-picker label { font-size: 12px; color: var(--muted); }
+.date-picker select {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.empty-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  gap: 4px;
+}
+
+.day-divider {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 16px 0 8px;
+}
+
+.msg-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+.msg-row.self { justify-content: flex-end; }
+
+.bubble {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.msg-row.self .bubble { background: var(--self); color: var(--self-text); border-bottom-right-radius: 4px; }
+.msg-row.peer .bubble { background: var(--peer); color: var(--peer-text); border-bottom-left-radius: 4px; }
+
+.msg-sender { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.msg-time { font-size: 11px; opacity: 0.7; margin-top: 4px; text-align: right; }
+
+mark { background: #ffe58a; padding: 0 1px; }
+
+@media (max-width: 768px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: 40vh; border-right: none; border-bottom: 1px solid var(--border); }
+  .bubble { max-width: 85%; }
+}

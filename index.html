@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahoo Messenger 對話紀錄瀏覽器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-title">
+      <h1>Yahoo Messenger 對話紀錄</h1>
+      <p class="subtitle">選取 Profiles 資料夾即可在本機瀏覽，資料不會上傳。</p>
+    </div>
+    <div class="picker">
+      <label class="btn" for="folder-input">選取 Profiles 資料夾</label>
+      <input id="folder-input" type="file" webkitdirectory directory multiple hidden />
+    </div>
+  </header>
+
+  <div id="status-bar" class="status-bar" hidden>
+    <span id="stat-files">0 個檔案</span>
+    <span id="stat-messages">0 則訊息</span>
+    <span id="stat-warnings" class="warn"></span>
+  </div>
+
+  <div id="progress" class="progress" hidden>解析中…</div>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="filter-group">
+        <label for="filter-account">帳號</label>
+        <select id="filter-account"></select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-category">分類</label>
+        <select id="filter-category"></select>
+      </div>
+      <div class="filter-group">
+        <input id="filter-search" type="search" placeholder="搜尋對象 / 訊息內容" />
+      </div>
+      <ul id="conversation-list" class="conversation-list"></ul>
+    </aside>
+
+    <section class="content">
+      <div id="conversation-header" class="conversation-header" hidden>
+        <div>
+          <h2 id="conv-title"></h2>
+          <p id="conv-meta" class="conv-meta"></p>
+        </div>
+        <div class="date-picker">
+          <label for="filter-date">日期</label>
+          <select id="filter-date"></select>
+        </div>
+      </div>
+      <div id="messages" class="messages">
+        <div id="empty-state" class="empty-state">
+          <p>尚未載入任何紀錄。</p>
+          <p>點選右上角「選取 Profiles 資料夾」開始。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="parser.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
