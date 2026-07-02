@@ -2,9 +2,13 @@
 
 純前端工具，在瀏覽器中解碼並瀏覽 Yahoo Messenger 封存（`.dat`）。全程本機處理，不上傳資料到雲端。
 
+## 快速使用
+
+直接開啟：<https://hirakujira.github.io/YIM-Archive-Viewer/>
+
 ## 使用
 
-1. 用瀏覽器開啟 `index.html`（建議 Chrome / Edge）。
+1. 用瀏覽器開啟 `index.html`（建議 Chrome / Edge），或直接使用上方網址。
 2. 點「選取 Profiles 資料夾」選擇 `Profiles` 目錄。
 3. 於左側選擇帳號、分類、對象瀏覽，支援日期篩選與關鍵字搜尋。
 
