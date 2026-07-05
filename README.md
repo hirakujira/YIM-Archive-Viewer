@@ -14,6 +14,8 @@
 
 支援 `Messages`、`Conferences`、`會客室` 三類封存，並自動處理 UTF-8／Big5 混用的舊紀錄。
 
+可將目前對話或篩選結果匯出為 HTML、JSON 或 CSV。
+
 ## 檔案
 
 - `index.html` / `styles.css`：介面

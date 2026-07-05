@@ -48,9 +48,26 @@
           <h2 id="conv-title"></h2>
           <p id="conv-meta" class="conv-meta"></p>
         </div>
-        <div class="date-picker">
-          <label for="filter-date">日期</label>
-          <select id="filter-date"></select>
+        <div class="header-tools">
+          <div class="date-picker">
+            <label for="filter-date">日期</label>
+            <select id="filter-date"></select>
+          </div>
+          <div class="export-controls">
+            <label for="export-scope">匯出</label>
+            <div class="export-row">
+              <select id="export-scope">
+                <option value="conversation">目前對話</option>
+                <option value="filtered">目前篩選結果</option>
+              </select>
+              <select id="export-format">
+                <option value="html">HTML</option>
+                <option value="json">JSON</option>
+                <option value="csv">CSV</option>
+              </select>
+              <button id="export-btn" class="btn" type="button">匯出</button>
+            </div>
+          </div>
         </div>
       </div>
       <div id="messages" class="messages">
